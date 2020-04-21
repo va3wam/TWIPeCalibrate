@@ -90,8 +90,8 @@ and so on.
 #endif
 
 #define I2C_bus0_speed 400000 // Define speed of I2C bus 2. Note 400KHz is the upper speed limit for ESP32 I2C
-#define I2C_bus0_SDA 22 // Define pin on the board used for Serial Data Line (SDA) for I2C bus 2
-#define I2C_bus0_SCL 23 // Define pin on the board used for Serial Clock Line (SCL) for I2C bus 2
+#define I2C_bus0_SDA 17 // Define pin on the board used for Serial Data Line (SDA) for I2C bus 2
+#define I2C_bus0_SCL 21 // Define pin on the board used for Serial Clock Line (SCL) for I2C bus 2
 
 // class default I2C address is 0x68
 // specific I2C addresses may be passed as a parameter here
