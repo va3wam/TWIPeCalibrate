@@ -15,7 +15,7 @@ To get a copy of this project up and running on your local machine for developme
 
 ## Running the tests
 
-When you run this test it takes about 5 mintes. Here is the output that you get:
+Run these tests over a serial connection between you computer and the robot. Use the green RESET button once you have serial data showing up to make sure that you see all the output. When you run this test it takes about 5 mintes because it is using two methods  and averaging a lot of readings to narrow down what calibration values you should use. Here is some example output that you get in your console window:
 
 ```Initializing I2C devices...
 Testing device connections...
@@ -84,7 +84,13 @@ averaging 10000 readings each time
 .................... [-4017,-4016] --> [-3,13]  [715,716] --> [-3,13]   [5399,5400] --> [16376,16396]   [134,135] --> [-1,2]    [-10,-9] --> [-1,3]     [-82,-82] --> [0,1]
 -------------- done --------------
 ```
+For our robot we only care about the XGyro, YGyro and ZGyro values. In this example we see these numbers:
 
+<ul>
+<li>XGyro show the range of values [134,135]. Pick the middle of the range which we will call 134 in this case.</li> 
+<li>YGyro show the range of values [-10,-9]. Pick the middle of the range which we will call -10 in this case.</li> 
+<li>ZGyro show the range of values [-82,-82]. Pick the middle of the range which we will call -82 in this case.</li> 
+</ul>
 
 ## Deployment
 
