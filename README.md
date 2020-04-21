@@ -15,7 +15,7 @@ To get a copy of this project up and running on your local machine for developme
 
 ## Running the tests
 
-Run these tests over a serial connection between you computer and the robot. Use the green RESET button once you have serial data showing up to make sure that you see all the output. When you run this test it takes about 5 mintes because it is using two methods  and averaging a lot of readings to narrow down what calibration values you should use. Here is some example output that you get in your console window:
+Run these calibration rotuine over a serial connection between you computer and the robot. Use the green RESET button once you have serial data showing up to make sure that you see all the output. When you run this test it takes about 5 mintes because it is using two methods  and averaging a lot of readings to narrow down what calibration values you should use. Here is some example output that you get in your console window:
 
 ```Initializing I2C devices...
 Testing device connections...
@@ -84,14 +84,28 @@ averaging 10000 readings each time
 .................... [-4017,-4016] --> [-3,13]  [715,716] --> [-3,13]   [5399,5400] --> [16376,16396]   [134,135] --> [-1,2]    [-10,-9] --> [-1,3]     [-82,-82] --> [0,1]
 -------------- done --------------
 ```
-For our robot we only care about the XGyro, YGyro and ZGyro values. In this example we see these numbers:
+Once the calibratin routine is done record the numbers in the last line. In this example we see these numbers:
 
 <ul>
+<li>XAccel show the range of values [-4017,-4016]. Pick the middle of the range which we will call -4017 in this case.</li> 
+<li>YAccel show the range of values [715,716]. Pick the middle of the range which we will call 715 in this case.</li> 
+<li>ZAccel show the range of values [5399,5400]. Pick the middle of the range which we will call 5400 in this case.</li> 
 <li>XGyro show the range of values [134,135]. Pick the middle of the range which we will call 134 in this case.</li> 
 <li>YGyro show the range of values [-10,-9]. Pick the middle of the range which we will call -10 in this case.</li> 
 <li>ZGyro show the range of values [-82,-82]. Pick the middle of the range which we will call -82 in this case.</li> 
 </ul>
 
+Now enter these values in the TWIPe main.cpp file as shown here:
+```
+// supply your own gyro offsets here, scaled for min sensitivity
+mpu.setXGyroOffset(134);
+mpu.setYGyroOffset(-10);
+mpu.setZGyroOffset(-82);
+mpu.setXAccelOffset(-4017);
+mpu.setYAccelOffset(715);
+mpu.setZAccelOffset(5400);
+```
+After this you can resume running the TWIPe code on your robot and expect valid balancing values.
 ## Deployment
 
 At this time the embedded code in this repository is uploaded via a serial connection using PlatformIO. 
