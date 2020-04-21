@@ -16,8 +16,8 @@ To get a copy of this project up and running on your local machine for developme
 ## Running the tests
 
 When you run this test it takes about 5 mintes. Here is the output that you get:
-<code>
-Initializing I2C devices...
+
+```Initializing I2C devices...
 Testing device connections...
 MPU6050 connection successful
 PID tuning Each Dot = 100 readings
@@ -83,7 +83,7 @@ averaging 10000 readings each time
 .................... [-4017,-4016] --> [-3,13]  [715,716] --> [-2,13]   [5399,5400] --> [16376,16396]   [134,135] --> [-1,2]    [-10,-9] --> [0,3]      [-82,-82] --> [0,1]
 .................... [-4017,-4016] --> [-3,13]  [715,716] --> [-3,13]   [5399,5400] --> [16376,16396]   [134,135] --> [-1,2]    [-10,-9] --> [-1,3]     [-82,-82] --> [0,1]
 -------------- done --------------
-</code>
+```
 
 
 ## Deployment
