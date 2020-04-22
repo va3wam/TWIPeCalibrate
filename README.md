@@ -84,7 +84,7 @@ averaging 10000 readings each time
 .................... [-4017,-4016] --> [-3,13]  [715,716] --> [-3,13]   [5399,5400] --> [16376,16396]   [134,135] --> [-1,2]    [-10,-9] --> [-1,3]     [-82,-82] --> [0,1]
 -------------- done --------------
 ```
-Once the calibratin routine is done record the numbers in the last line. In this example we see these numbers:
+Once the calibration routine is done record the numbers in the last line. In this example we see these numbers:
 
 <ul>
 <li>XAccel show the range of values [-4017,-4016]. Pick the middle of the range which we will call -4017 in this case.</li> 
