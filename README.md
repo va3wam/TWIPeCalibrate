@@ -95,15 +95,33 @@ Once the calibration routine is done record the numbers in the last line. In thi
 <li>ZGyro show the range of values [-82,-82]. Pick the middle of the range which we will call -82 in this case.</li> 
 </ul>
 
-Now enter these values in the TWIPe main.cpp file as shown here:
+Now enter these values in the TWIPe main.cpp file as shown here. (Add your own elseif section, do not delete ther MAC addresses):
 ```
-// supply your own gyro offsets here, scaled for min sensitivity
-mpu.setXGyroOffset(134);
-mpu.setYGyroOffset(-10);
-mpu.setZGyroOffset(-82);
-mpu.setXAccelOffset(-4017);
-mpu.setYAccelOffset(715);
-mpu.setZAccelOffset(5400);
+void cfg_by_MAC()
+{
+    myMACaddress = formatMAC();
+    BCDDC2F7D6D5
+    if(myMACaddress == "BCDDC2F7D6D5")
+    {
+      Serial.println("<cfg_by_MAC> Setting up MAC BCDDC2F7D6D5 configuration");
+      XGyroOffset = 135;
+      YGyroOffset = -9;
+      ZGyroOffset = -85;
+      XAccelOffset = -3396;
+      YAccelOffset = 830;
+      ZAccelOffset = 1890;      
+    } //if
+    else
+    {
+      Serial.println("<cfg_by_MAC> MAC not recognized. Setting up generic configuration");
+      XGyroOffset = 135;
+      YGyroOffset = -9;
+      ZGyroOffset = -85;
+      XAccelOffset = -3396;
+      YAccelOffset = 830;
+      ZAccelOffset = 1890;      
+    } //else
+} //cfg_by_MAC()
 ```
 After this you can resume running the TWIPe code on your robot and expect valid balancing values.
 ## Deployment
